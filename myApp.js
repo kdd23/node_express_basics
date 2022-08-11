@@ -1,7 +1,7 @@
 let express = require('express');
 let app = express();
 const router = express.Router();
-
+let bodyParser = require('body-parser');
 require('dotenv').config();
 
 //2. Start a Working Express Server
@@ -66,5 +66,9 @@ app.get("/name", (req, res) => {
     name: `${firstName} ${lastName}`  
   })
 })
+
+// 11. Use body-parser to Parse POST Requests
+app.use(bodyParser.urlencoded({extended: false}));
+
 
 
