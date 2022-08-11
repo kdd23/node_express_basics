@@ -73,7 +73,6 @@ app.use(bodyParser.urlencoded({extended: false}));
 // 12. Get Data from POST Requests
 app.post("/name", (req, res) => {
   let name = `${req.body.first} ${req.body.last}` 
-
   res.json({name});
 });
 
