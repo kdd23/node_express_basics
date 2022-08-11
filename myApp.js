@@ -35,4 +35,11 @@ app.get("/json", function (req, res) {
   }
 });
 
+//7. implement a root level request logger middleware
+app.use(function(req, res, next){
+  console.log(req.method + " " + req.path + " - " + req.ip);
+  next();
+});
+
+
 module.exports = router;
