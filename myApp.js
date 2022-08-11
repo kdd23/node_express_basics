@@ -58,3 +58,13 @@ app.get("/:word/echo", function(req, res, next) {
 })
 module.exports = router;
 
+// 10. Get Query Parameter Input from the Client
+app.get("/name", (req, res) => {
+  let firstName = req.query.first;
+  let lastName = req.query.last;
+  res.send({
+    name: `${firstName} ${lastName}`  
+  })
+})
+
+
